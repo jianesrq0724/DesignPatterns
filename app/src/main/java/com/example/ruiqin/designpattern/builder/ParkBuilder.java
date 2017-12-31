@@ -44,10 +44,8 @@ public class ParkBuilder {
             return this;
         }
 
-        public void builder() {
-            mIntent.putExtra("sectionId", mParkBuilder.sectionId);
-            mIntent.putExtra("berthCode", mParkBuilder.berthCode);
-
+        public ParkBuilder builder() {
+            return this.mParkBuilder;
         }
 
     }
