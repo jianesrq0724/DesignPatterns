@@ -9,44 +9,44 @@ import android.content.Intent;
  * 版权所有：深圳市亿车科技有限公司
  */
 
-public class Park {
+public class ParkBuilder {
 
     private String sectionId;
     private String berthCode;
     private String carPlate;
 
-    private Park() {
+    private ParkBuilder() {
 
     }
 
     public static class Builder {
 
-        private final Park park;
+        private final ParkBuilder mParkBuilder;
         private final Intent mIntent;
 
         public Builder() {
-            park = new Park();
+            mParkBuilder = new ParkBuilder();
             mIntent = new Intent();
         }
 
         public Builder setSectionId(String sectionId) {
-            park.sectionId = sectionId;
+            mParkBuilder.sectionId = sectionId;
             return this;
         }
 
         public Builder setBerthCode(String berthCode) {
-            park.berthCode = berthCode;
+            mParkBuilder.berthCode = berthCode;
             return this;
         }
 
         public Builder setCarPlate(String carPlate) {
-            park.carPlate = carPlate;
+            mParkBuilder.carPlate = carPlate;
             return this;
         }
 
         public void builder() {
-            mIntent.putExtra("sectionId", park.sectionId);
-            mIntent.putExtra("berthCode", park.berthCode);
+            mIntent.putExtra("sectionId", mParkBuilder.sectionId);
+            mIntent.putExtra("berthCode", mParkBuilder.berthCode);
 
         }
 
