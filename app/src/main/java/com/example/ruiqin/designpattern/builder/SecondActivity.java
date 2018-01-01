@@ -9,15 +9,11 @@ import com.example.ruiqin.designpattern.utils.ToastUtils;
 
 public class SecondActivity extends BaseActivity {
 
-    /**
-     * sectionId
-     */
     private static final String EXTRA_SECTION_ID = "section_id";
 
     private static final String EXTRA_BERTH_CODE = "berth_code";
 
     private static final String EXTRA_CAR_PLATE = "car_plate";
-
 
     private static final String EXTRA_VEHICLE_TYPE = "vehicle_type";
 
@@ -26,17 +22,52 @@ public class SecondActivity extends BaseActivity {
     private String mCarPlate;
     private String mVehicleType;
 
-    public static void startActivity(Context context, String sectionId, String berthCode, String carPlate) {
-        startActivity(context, sectionId, berthCode, carPlate, null);
-    }
+//    public static void startActivity(Context context, String sectionId, String berthCode, String carPlate) {
+//        startActivity(context, sectionId, berthCode, carPlate, null);
+//    }
+//
+//    private static void startActivity(Context context, String sectionId, String berthCode, String carPlate, String vehicleType) {
+//        Intent intent = new Intent(context.getApplicationContext(), SecondActivity.class);
+//        intent.putExtra(EXTRA_SECTION_ID, sectionId);
+//        intent.putExtra(EXTRA_BERTH_CODE, berthCode);
+//        intent.putExtra(EXTRA_CAR_PLATE, carPlate);
+//        intent.putExtra(EXTRA_VEHICLE_TYPE, vehicleType);
+//        context.startActivity(intent);
+//    }
 
-    private static void startActivity(Context context, String sectionId, String berthCode, String carPlate, String vehicleType) {
-        Intent intent = new Intent(context.getApplicationContext(), SecondActivity.class);
-        intent.putExtra(EXTRA_SECTION_ID, sectionId);
-        intent.putExtra(EXTRA_BERTH_CODE, berthCode);
-        intent.putExtra(EXTRA_CAR_PLATE, carPlate);
-        intent.putExtra(EXTRA_VEHICLE_TYPE, vehicleType);
-        context.startActivity(intent);
+    public static class Builder {
+        private String sectionId;
+        private String berthCode;
+        private String carPlate;
+        private Context mContext;
+
+        public Builder(Context context) {
+            this.mContext = context;
+        }
+
+        public SecondActivity.Builder setSectionId(String sectionId) {
+            this.sectionId = sectionId;
+            return this;
+        }
+
+        public SecondActivity.Builder setBerthCode(String berthCode) {
+            this.berthCode = berthCode;
+            return this;
+        }
+
+
+        public SecondActivity.Builder setCarPlate(String carPlate) {
+            this.carPlate = carPlate;
+            return this;
+        }
+
+        public void builder() {
+            Intent intent = new Intent(mContext.getApplicationContext(), SecondActivity.class);
+            intent.putExtra(EXTRA_SECTION_ID, this.sectionId);
+            intent.putExtra(EXTRA_BERTH_CODE, this.berthCode);
+            intent.putExtra(EXTRA_CAR_PLATE, this.carPlate);
+            mContext.startActivity(intent);
+        }
     }
 
     @Override

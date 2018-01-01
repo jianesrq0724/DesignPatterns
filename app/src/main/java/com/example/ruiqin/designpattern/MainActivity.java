@@ -23,7 +23,10 @@ public class MainActivity extends BaseActivity {
         mButton0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SecondActivity.startActivity(MainActivity.this, "0000", "0001", "粤B");
+
+                new SecondActivity.Builder(mContext).setSectionId("0000").setBerthCode("0001").setCarPlate("粤B").builder();
+
+//                SecondActivity.startActivity(MainActivity.this, "0000", "0001", "粤B");
             }
         });
     }

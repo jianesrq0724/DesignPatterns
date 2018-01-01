@@ -1,7 +1,5 @@
 package com.example.ruiqin.designpattern.builder;
 
-import android.content.Intent;
-
 /**
  * 功能：
  * 创建者：ruiqin.shen
@@ -15,39 +13,40 @@ public class ParkBuilder {
     private String berthCode;
     private String carPlate;
 
-    private ParkBuilder() {
-
+    private ParkBuilder(Builder builder) {
+        sectionId = builder.sectionId;
+        berthCode = builder.berthCode;
+        carPlate = builder.carPlate;
     }
 
     public static class Builder {
 
-        private final ParkBuilder mParkBuilder;
-        private final Intent mIntent;
+        private String sectionId;
+        private String berthCode;
+        private String carPlate;
 
         public Builder() {
-            mParkBuilder = new ParkBuilder();
-            mIntent = new Intent();
+
         }
 
         public Builder setSectionId(String sectionId) {
-            mParkBuilder.sectionId = sectionId;
+            this.sectionId = sectionId;
             return this;
         }
 
         public Builder setBerthCode(String berthCode) {
-            mParkBuilder.berthCode = berthCode;
+            this.berthCode = berthCode;
             return this;
         }
 
         public Builder setCarPlate(String carPlate) {
-            mParkBuilder.carPlate = carPlate;
+            this.carPlate = carPlate;
             return this;
         }
 
         public ParkBuilder builder() {
-            return this.mParkBuilder;
+            return new ParkBuilder(this);
         }
-
     }
 
 }

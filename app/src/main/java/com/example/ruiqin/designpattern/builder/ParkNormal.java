@@ -9,6 +9,13 @@ package com.example.ruiqin.designpattern.builder;
 
 public class ParkNormal {
 
+    private String sectionId;
+    private String berthCode;
+    private String carPlate;
+    private String vehicleType;
+    private String carColor;
+    private int carStartTime;
+    private int prepareTime;
 
     /**
      * @param sectionId
@@ -32,10 +39,19 @@ public class ParkNormal {
     }
 
     private void applyPark(String sectionId, String berthCode, String carPlate, String vehicleType, String carColor, int carStartTime) {
-        applyPark2(sectionId, berthCode, carPlate, vehicleType, carColor, carStartTime, 0);
+        applyPark(sectionId, berthCode, carPlate, vehicleType, carColor, carStartTime, 0);
     }
 
-    private void applyPark2(String sectionId, String berthCode, String carPlate, String vehicleType, String carColor, int carStartTime, int prepareTime) {
+    private void applyPark(String sectionId, String berthCode, String carPlate, String vehicleType, String carColor, int carStartTime, int prepareTime) {
+
+        this.sectionId = sectionId;
+        this.berthCode = berthCode;
+        this.carPlate = carPlate;
+        this.vehicleType = vehicleType;
+        this.carColor = carColor;
+        this.carStartTime = carStartTime;
+        this.prepareTime = prepareTime;
+
         //业务逻辑处理
         String message = sectionId + berthCode + carPlate + vehicleType + carColor + carStartTime + prepareTime;
         System.out.println("申请停车" + message);
