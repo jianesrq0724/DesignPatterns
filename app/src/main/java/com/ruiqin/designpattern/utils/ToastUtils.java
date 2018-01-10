@@ -1,4 +1,4 @@
-package com.example.ruiqin.designpattern.utils;
+package com.ruiqin.designpattern.utils;
 
 import android.content.Context;
 import android.widget.Toast;
@@ -17,7 +17,7 @@ public class ToastUtils {
 
     public static void showShort(Context context, String message) {
         if (sToast == null) {
-            sToast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
+            sToast = Toast.makeText(context.getApplicationContext(), message, Toast.LENGTH_SHORT);
         } else {
             sToast.setText(message);
         }

@@ -1,4 +1,4 @@
-package com.example.ruiqin.designpattern;
+package com.ruiqin.designpattern;
 
 import org.junit.Test;
 

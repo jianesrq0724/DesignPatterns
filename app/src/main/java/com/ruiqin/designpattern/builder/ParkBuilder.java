@@ -1,4 +1,4 @@
-package com.example.ruiqin.designpattern.builder;
+package com.ruiqin.designpattern.builder;
 
 /**
  * 功能：

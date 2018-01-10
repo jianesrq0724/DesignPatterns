@@ -1,4 +1,4 @@
-package com.example.ruiqin.designpattern;
+package com.ruiqin.designpattern;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedParkBuilderNormal {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.ruiqin.designpattern", appContext.getPackageName());
+        assertEquals("com.ruiqin.designpattern", appContext.getPackageName());
     }
 }

@@ -1,11 +1,11 @@
-package com.example.ruiqin.designpattern.builder;
+package com.ruiqin.designpattern.builder;
 
 import android.content.Context;
 import android.content.Intent;
 
-import com.example.ruiqin.designpattern.R;
-import com.example.ruiqin.designpattern.base.BaseActivity;
-import com.example.ruiqin.designpattern.utils.ToastUtils;
+import com.ruiqin.designpattern.R;
+import com.ruiqin.designpattern.base.BaseActivity;
+import com.ruiqin.designpattern.utils.ToastUtils;
 
 public class SecondActivity extends BaseActivity {
 

@@ -1,4 +1,4 @@
-package com.example.ruiqin.designpattern.base;
+package com.ruiqin.designpattern.base;
 
 import android.content.Context;
 import android.os.Bundle;
